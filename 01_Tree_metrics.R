@@ -3,18 +3,11 @@
 ######## lea.enguehard@awi.de ########
 ##### Compute tree metrics
 
-setwd("//dmawi/potsdam/data/bioing/user/lenguehard/Project 2/RD_0209/R_Lidar")
-
 library(lidR)
 library(raster)
 library(dplyr)
 library(sf)
 
-
-library(ForestTools)
-library(geometry)
-library(ggplot2)
-library(dplyr)
 
 # Import forest plot ID and UTM coordinates
 coords_df <- read.csv("data/CA22_AK23_AK24_UTM.csv")
