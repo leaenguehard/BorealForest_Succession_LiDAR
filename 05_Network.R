@@ -5,7 +5,7 @@
 library(dplyr)
 library(igraph)
 
-table <- read.csv("results/classification/patch_table/abundance_patch_all.csv") #Importance abundance table from all sites merged in one file
+table <- read.csv("results/classification/patch_table/abundance_patch_all.csv") #Import abundance table from all sites merged in one file
 
 table <- table %>%
   mutate(
