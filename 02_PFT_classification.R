@@ -7,7 +7,6 @@ library(lidR)
 library(randomForest)
 library(dplyr)
 library(ggplot2)
-setwd("//dmawi/potsdam/data/bioing/user/lenguehard/Project 2/RD_0209/R_Lidar")
 
 coords_df <- read.csv("data/CA22_AK23_AK24_UTM.csv") # Import plot IDs coordinates
 plot_ids <- unique(coords_df$Plot)
