@@ -1,5 +1,5 @@
 ############# Author: Léa Enguehard ############# 
-########## Date: 15 November 2024 ##########
+########## Date: 05 November 2024 ##########
 ######## lea.enguehard@awi.de ########
 ##### Build forest-patch network
 library(dplyr)
