@@ -17,7 +17,7 @@ Provide scripts used to:
 
 # Disclaimer 
 
-The individual tree segmentation was performed beforehand with TreeIso (Xi & Hopkinson, 2022), the ground point segmentation in  CloudCompare software v2.13.beta, the community detection algorithm applied to the network and network vizualisation in Gephi v0.10.1.
+The individual tree segmentation was performed beforehand with TreeIso (Xi & Hopkinson, 2022), the ground point segmentation in  CloudCompare software v2.13.beta, the community detection algorithm applied to the network and network vizualisation in Gephi v0.10.1. Some scripts were improved with the help of ChatGPT by OpenAI.  
 
 
 **References**
