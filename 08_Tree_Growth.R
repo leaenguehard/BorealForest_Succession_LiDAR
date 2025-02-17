@@ -230,3 +230,89 @@ print(plot)
 
 
 
+
+# Check relationship with temperature
+library(raster)
+
+temp1 <- raster("data/worldclim/wc2.1_30s_tavg_01.tif")
+temp2 <- raster("data/worldclim/wc2.1_30s_tavg_02.tif")
+temp3 <- raster("data/worldclim/wc2.1_30s_tavg_03.tif")
+temp4 <- raster("data/worldclim/wc2.1_30s_tavg_04.tif")
+temp5 <- raster("data/worldclim/wc2.1_30s_tavg_05.tif")
+temp6 <- raster("data/worldclim/wc2.1_30s_tavg_06.tif")
+temp7 <- raster("data/worldclim/wc2.1_30s_tavg_07.tif")
+temp8 <- raster("data/worldclim/wc2.1_30s_tavg_08.tif")
+temp9 <- raster("data/worldclim/wc2.1_30s_tavg_09.tif")
+temp10 <- raster("data/worldclim/wc2.1_30s_tavg_10.tif")
+temp11 <- raster("data/worldclim/wc2.1_30s_tavg_11.tif")
+temp12 <- raster("data/worldclim/wc2.1_30s_tavg_12.tif")
+
+coords <- tree_data[, c("Longitude", "Latitude")]
+
+# Extract temperature values for each month for each coordinate
+temp_values_01 <- extract(temp1, coords)
+temp_values_02 <- extract(temp2, coords)
+temp_values_03 <- extract(temp3, coords)
+temp_values_04 <- extract(temp4, coords)
+temp_values_05 <- extract(temp5, coords)
+temp_values_06 <- extract(temp6, coords)
+temp_values_07 <- extract(temp7, coords)
+temp_values_08 <- extract(temp8, coords)
+temp_values_09 <- extract(temp9, coords)
+temp_values_10 <- extract(temp10, coords)
+temp_values_11 <- extract(temp11, coords)
+temp_values_12 <- extract(temp12, coords)
+
+annual_temp <- rowMeans(cbind(temp_values_01, temp_values_02, temp_values_03,
+                              temp_values_04, temp_values_05, temp_values_06,
+                              temp_values_07, temp_values_08, temp_values_09,
+                              temp_values_10, temp_values_11, temp_values_12), 
+                        na.rm = TRUE)
+
+tree_data$avg_temp <- annual_temp
+
+model <- lm( age_breastheight ~ avg_temp   , data = tree_data)
+
+summary(model)
+
+cor_test <- cor.test(tree_data$avg_temp, tree_data$height_m, method = "pearson")
+cor_test
+
+
+cor_test_spearman <- cor.test(tree_data$avg_temp, tree_data$height_m, method = "spearman")
+cor_test_spearman
+
+
+
+ggplot(tree_data, aes(x = age_breastheight, y = height_m, color = avg_temp)) +
+  geom_point() +
+  labs(title = "Mean annual temperature (WorldClim)",
+       x = "Age at Breast Height (years)",
+       y = "Tree Height (m)") +
+  theme_minimal() 
+
+library(ggplot2)
+
+plot2 <- ggplot(tree_data, aes(x = height_m, y = age_breastheight, color = avg_temp)) +
+  geom_point() +
+  labs(title = "",
+       y = "Estimated age at Breast Height (years)",
+       x = "Tree height (meters)",
+       color = "Temperature (°C)") + 
+  theme_minimal() +
+  guides(shape = "none") +  
+  theme(legend.position = "right",
+        legend.title = element_text(size = 14), 
+        legend.text = element_text(size = 14), 
+        axis.text.y = element_text(size = 14),
+        axis.text.x = element_text(size = 14),
+        axis.title.x = element_text(size = 14),
+        axis.title.y = element_text(size = 14),
+        panel.background = element_blank(),
+        panel.grid.major = element_line(color = "grey90", linewidth = 0.5),  
+        panel.grid.minor = element_blank()
+  )
+
+print(plot2)
+
+
