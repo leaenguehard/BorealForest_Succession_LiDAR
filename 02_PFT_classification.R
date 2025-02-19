@@ -210,7 +210,7 @@ importance_long <- importance_df %>%
                values_to = "Value")
 
 
-palette <- c("1" = "#009E73", "2" = "#D55E00", "MeanDecreaseAccuracy" = "#40658C", "MeanDecreaseGini" = "#FFD470")
+palette <- c("2" = "#009E73", "1" = "#D55E00", "MeanDecreaseAccuracy" = "#40658C", "MeanDecreaseGini" = "#FFD470")
 
 MDA <- ggplot(importance_long, aes(x = Variable, y = Value, fill = Metric)) +
   geom_boxplot(position = position_dodge(width = 0.8)) +

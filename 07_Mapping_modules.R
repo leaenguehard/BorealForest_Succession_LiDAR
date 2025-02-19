@@ -45,13 +45,13 @@ ggplot(EN24118, aes(x = Longitude, y = Latitude, color = as.factor(modularity_cl
 
 # Plot figure A6 appendix
 transect <- ggplot(abundance, aes(x = Patch_Ycenter, y = Patch_Xcenter, color = as.factor(modularity_class))) +
-  geom_point(size = 1.5 ) +  
-  scale_color_manual(values = modularity_palette) + 
+  geom_point(size = 2 ) +  # Adjust point size
+  scale_color_manual(values = modularity_palette) +  # Apply consistent colors
   labs(
     title = "",
-    x = NULL,  
-    y = NULL,  
-    color = "Modularity Class"
+    x = NULL,  # Remove X-axis label
+    y = NULL,  # Remove Y-axis label
+    color = "Stage"  # Change legend title
   ) +
   theme_minimal() +
   theme(
@@ -59,12 +59,11 @@ transect <- ggplot(abundance, aes(x = Patch_Ycenter, y = Patch_Xcenter, color = 
     axis.title.x = element_text(size = 14), 
     axis.ticks = element_blank(),  
     panel.grid = element_blank(),  
-    strip.text = element_text(size = 12)  
+    strip.text = element_text(size = 14),
+    legend.text = element_text(size = 14),  
+    legend.title = element_text(size = 14)
   ) +
-  facet_wrap(~ plotID, scales = "free")  
-print(transect)
-
-# Save the plot as a PNG with 800 DPI
+  facet_wrap(~ plotID, scales = "free") 
 ggsave("Transect.png", plot = transect, dpi = 800, width = 14, height = 9 )
 
 # Figure 7 
