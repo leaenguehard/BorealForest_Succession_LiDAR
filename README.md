@@ -5,7 +5,7 @@ This is a repository containing scripts used for a publication by Léa Enguehard
 
 ***
 
-# Purpose of BorealForest_Succession_LiDAR repository
+# Aim of BorealForest_Succession_LiDAR repository
 Provide scripts used to:
 -  Derive metrics from individual tree pointclouds
 -  Classify trees into plant functional types 
