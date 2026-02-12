@@ -1,7 +1,7 @@
 # Investigating boreal forests successional stages in Alaska and Northwest Canada: a UAV LiDAR-based study
 This is a repository containing scripts used for a publication by Léa Enguehard et al., 2025. 
 
-**Enguehard, L.; Heim, B.; Herzschuh, U.; Dinkel, V.; Juday, G.; Panda, S.; Falco, N.; Schladebach, J.; Broers, J. and Kruse, S. (2026), Investigating boreal forest successional stages in Alaska and Northwest Canada using UAV-LiDAR and RGB and a community detection network. Remote Sens Ecol Conserv. https://doi.org/10.1002/rse2.70029
+Enguehard, L.; Heim, B.; Herzschuh, U.; Dinkel, V.; Juday, G.; Panda, S.; Falco, N.; Schladebach, J.; Broers, J. and Kruse, S. (2026), Investigating boreal forest successional stages in Alaska and Northwest Canada using UAV-LiDAR and RGB and a community detection network. Remote Sens Ecol Conserv. https://doi.org/10.1002/rse2.70029
 
 ***
 
